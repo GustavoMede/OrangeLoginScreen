@@ -3,12 +3,14 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="app/src/main/res/drawable-v23/splash_background.xml" value="0.203125" />
         <entry key="app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.41333333333333333" />
         <entry key="app/src/main/res/drawable/custom_button.xml" value="0.41333333333333333" />
         <entry key="app/src/main/res/drawable/custom_edittext.xml" value="0.41333333333333333" />
         <entry key="app/src/main/res/drawable/gradient_background.xml" value="0.41333333333333333" />
         <entry key="app/src/main/res/drawable/ic_launcher_background.xml" value="0.41333333333333333" />
         <entry key="app/src/main/res/drawable/ic_login_background.xml" value="0.41333333333333333" />
+        <entry key="app/src/main/res/drawable/splash_background.xml" value="0.29912280701754385" />
         <entry key="app/src/main/res/drawable/textinputborder.xml" value="0.41333333333333333" />
         <entry key="app/src/main/res/layout/activity_lista_usuarios.xml" value="0.19630192502532928" />
         <entry key="app/src/main/res/layout/activity_login_form.xml" value="0.2" />
