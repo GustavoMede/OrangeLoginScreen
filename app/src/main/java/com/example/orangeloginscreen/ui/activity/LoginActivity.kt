@@ -20,6 +20,9 @@ class LoginActivity : AppCompatActivity(R.layout.activity_login_form) {
             val passwordField = findViewById<EditText>(R.id.password)
             val password = passwordField.text.toString()
 
+            usernameField.setText("")
+            passwordField.setText("")
+
             val usuario = Usuario(username, password)
 
             val dao = UsuarioDao()
@@ -28,7 +31,6 @@ class LoginActivity : AppCompatActivity(R.layout.activity_login_form) {
 
             val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
-            finish()
         }
     }
 }
