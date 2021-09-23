@@ -10,9 +10,6 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
         <activity
-            android:name=".ui.activity.CreateAccountActivity"
-            android:exported="true" />
-        <activity
             android:name=".ui.activity.SplashScreenActivity"
             android:exported="true"
             android:theme="@style/SplashTheme">
@@ -24,12 +21,15 @@
         </activity>
         <activity
             android:name=".ui.activity.LoginActivity"
-            android:exported="true"></activity>
+            android:exported="true" />
         <activity
             android:name=".ui.activity.ListUsersActivity"
-            android:exported="true"></activity>
+            android:exported="true" />
         <activity
             android:name=".ui.activity.EditUserDataActivity"
+            android:exported="true" />
+        <activity
+            android:name=".ui.activity.CreateAccountActivity"
             android:exported="true" />
     </application>
 

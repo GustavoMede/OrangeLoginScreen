@@ -11,7 +11,6 @@ import com.example.orangeloginscreen.model.User
 class EditUserDataActivity : AppCompatActivity() {
 
     private lateinit var editBinding : ActivityEditUserDataBinding
-    private lateinit var listUsersBinding: ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -35,7 +34,9 @@ class EditUserDataActivity : AppCompatActivity() {
                 finish()
             }
 
-
+            editBinding.editUserCancelChangesButton.setOnClickListener {
+                finish()
+            }
         }
 
         Toast.makeText(this, "Chegou na activity de editar o camarada", Toast.LENGTH_SHORT).show()

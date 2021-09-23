@@ -18,21 +18,21 @@
             android:background="@drawable/gradient_background">
 
             <androidx.constraintlayout.widget.Guideline
-                android:id="@+id/edit_user_guideline_begin"
+                android:id="@+id/create_account_guideline_begin"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 app:layout_constraintGuide_begin="30dp" />
 
             <androidx.constraintlayout.widget.Guideline
-                android:id="@+id/edit_user_guideline_end"
+                android:id="@+id/create_account_guideline_end"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 app:layout_constraintGuide_end="30dp" />
 
             <EditText
-                android:id="@+id/edit_user_username"
+                android:id="@+id/create_account_username"
                 android:layout_width="330dp"
                 android:layout_height="wrap_content"
                 android:background="@drawable/custom_edittext"
@@ -41,13 +41,13 @@
                 android:paddingStart="15dp"
                 android:paddingEnd="15dp"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="@id/edit_user_guideline_end"
+                app:layout_constraintEnd_toEndOf="@id/create_account_guideline_end"
                 app:layout_constraintHorizontal_bias="0.5"
-                app:layout_constraintStart_toStartOf="@id/edit_user_guideline_begin"
+                app:layout_constraintStart_toStartOf="@id/create_account_guideline_begin"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <EditText
-                android:id="@+id/edit_user_password"
+                android:id="@+id/create_account_password"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
@@ -56,45 +56,59 @@
                 android:inputType="textPassword"
                 android:paddingStart="15dp"
                 android:paddingEnd="15dp"
-                app:layout_constraintEnd_toEndOf="@id/edit_user_guideline_end"
-                app:layout_constraintStart_toStartOf="@id/edit_user_guideline_begin"
-                app:layout_constraintTop_toBottomOf="@id/edit_user_username" />
+                app:layout_constraintEnd_toEndOf="@id/create_account_guideline_end"
+                app:layout_constraintStart_toStartOf="@id/create_account_guideline_begin"
+                app:layout_constraintTop_toBottomOf="@id/create_account_username" />
+
+            <EditText
+                android:id="@+id/create_account_confirmPassword"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/custom_edittext"
+                android:hint="Confirm password"
+                android:inputType="textPassword"
+                android:paddingStart="15dp"
+                android:paddingEnd="15dp"
+                app:layout_constraintEnd_toEndOf="@id/create_account_guideline_end"
+                app:layout_constraintStart_toStartOf="@id/create_account_guideline_begin"
+                app:layout_constraintTop_toBottomOf="@id/create_account_password" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Edit Data"
+                android:text="Create New Account"
                 android:textColor="#E4504A4A"
                 android:textSize="25sp"
                 android:textStyle="bold"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="@id/edit_user_guideline_end"
-                app:layout_constraintStart_toStartOf="@id/edit_user_guideline_begin"
+                app:layout_constraintEnd_toEndOf="@id/create_account_guideline_end"
+                app:layout_constraintStart_toStartOf="@id/create_account_guideline_begin"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintVertical_bias="0.25" />
 
             <Button
-                android:id="@+id/edit_user_saveChangesButton"
+                android:id="@+id/create_account_saveAccountCreationButton"
                 android:layout_width="160dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:backgroundTint="#FF8461"
-                android:text="Save"
+                android:text="Create"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="@id/edit_user_guideline_end"
-                app:layout_constraintTop_toBottomOf="@+id/edit_user_password"
+                app:layout_constraintEnd_toEndOf="@id/create_account_guideline_end"
+                app:layout_constraintTop_toBottomOf="@+id/create_account_confirmPassword"
                 app:layout_constraintVertical_bias="0" />
 
             <Button
-                android:id="@+id/edit_user_cancelChangesButton"
+                android:id="@+id/create_account_cancelCreateAccountButton"
                 android:layout_width="160dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:backgroundTint="#AC9892"
                 android:text="Cancel"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="@id/edit_user_guideline_begin"
-                app:layout_constraintTop_toBottomOf="@+id/edit_user_password"
+                app:layout_constraintStart_toStartOf="@id/create_account_guideline_begin"
+                app:layout_constraintTop_toBottomOf="@+id/create_account_confirmPassword"
                 app:layout_constraintVertical_bias="0" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>

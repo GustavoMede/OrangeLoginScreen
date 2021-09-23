@@ -18,6 +18,15 @@ class UserDao {
         userFound.password = user.password
     }
 
+    fun existsUser(username: String, password: String): Boolean{
+        for(i in users.indices){
+            if(users[i].username.equals(username) && users[i].password.equals(password)){
+                return true
+            }
+        }
+        return false
+    }
+
     companion object {
         private val users = mutableListOf<User>()
     }
