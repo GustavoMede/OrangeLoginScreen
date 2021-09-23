@@ -3,32 +3,38 @@ package com.example.orangeloginscreen.ui.activity
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Button
-import android.widget.EditText
-import com.example.orangeloginscreen.R
-import com.example.orangeloginscreen.dao.UsuarioDao
-import com.example.orangeloginscreen.model.Usuario
+import com.example.orangeloginscreen.dao.UserDao
+import com.example.orangeloginscreen.databinding.ActivityLoginFormBinding
+import com.example.orangeloginscreen.model.User
 
-class LoginActivity : AppCompatActivity(R.layout.activity_login_form) {
+class LoginActivity : AppCompatActivity() {
+
+    private lateinit var binding: ActivityLoginFormBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        val signInButton = findViewById<Button>(R.id.botao_login)
 
-        signInButton.setOnClickListener {
-            val usernameField = findViewById<EditText>(R.id.username)
-            val username = usernameField.text.toString()
-            val passwordField = findViewById<EditText>(R.id.password)
-            val password = passwordField.text.toString()
+        binding = ActivityLoginFormBinding.inflate(layoutInflater)
+        val view = binding.root
+        setContentView(view)
 
-            val usuario = Usuario(username, password)
+        binding.loginFormLoginButton.setOnClickListener {
 
-            val dao = UsuarioDao()
+            val usuario = User(binding.loginFormUsername.text.toString(), binding.loginFormPassword.text.toString())
 
-            dao.adiciona(usuario)
+            val dao = UserDao()
 
-            val intent = Intent(this, MainActivity::class.java)
+            dao.addUser(usuario)
+
+            val intent = Intent(this, ListUsersActivity::class.java)
             startActivity(intent)
-            finish()
         }
+    }
+
+    override fun onRestart() {
+        super.onRestart()
+
+        binding.loginFormUsername.setText("")
+        binding.loginFormPassword.setText("")
     }
 }
