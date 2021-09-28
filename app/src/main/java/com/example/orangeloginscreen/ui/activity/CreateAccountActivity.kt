@@ -17,28 +17,48 @@ class CreateAccountActivity : AppCompatActivity() {
         val view = binding.root
         setContentView(view)
 
+        setOnClickListener()
+
+    }
+
+    private fun createUser() {
+        if(isValidPassword()) {
+            saveUser()
+            finish()
+        }else {
+            showPasswordError()
+        }
+    }
+
+    private fun isValidPassword() : Boolean {
+        val password = binding.createAccountPassword.text.toString()
+        val passwordConfirmRecieved = binding.createAccountConfirmPassword.text.toString()
+
+        return password == passwordConfirmRecieved
+    }
+
+    private fun setOnClickListener() {
         binding.createAccountSaveAccountCreationButton.setOnClickListener {
-            if(binding.createAccountPassword.text.toString() != binding.createAccountConfirmPassword.text.toString()){
-                Toast.makeText(this, "The passwords doesn't match!", Toast.LENGTH_SHORT).show()
-            }else {
-                val dao = UserDao()
-
-                dao.addUser(
-                    User(
-                        binding.createAccountUsername.text.toString(),
-                        binding.createAccountPassword.text.toString()
-                    )
-                )
-
-                Toast.makeText(this, "Account successfully created!", Toast.LENGTH_SHORT).show()
-
-                finish()
-            }
+            createUser()
         }
 
         binding.createAccountCancelCreateAccountButton.setOnClickListener {
             finish()
         }
+    }
 
+    private fun saveUser() {
+        val dao = UserDao()
+
+        dao.addUser(
+            User(
+                username = binding.createAccountUsername.text.toString(),
+                password = binding.createAccountPassword.text.toString()
+            )
+        )
+    }
+
+    private fun showPasswordError() {
+        Toast.makeText(this, "The passwords doesn't match!", Toast.LENGTH_SHORT).show()
     }
 }

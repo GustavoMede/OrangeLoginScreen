@@ -1,116 +1,110 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    tools:layout_editor_absoluteX="0dp"
+    tools:layout_editor_absoluteY="0dp">
 
-    <androidx.core.widget.NestedScrollView
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:fillViewport="true"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="0dp">
+        android:background="@drawable/gradient_background">
 
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@drawable/gradient_background">
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/create_account_guideline_begin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="30dp" />
 
-            <androidx.constraintlayout.widget.Guideline
-                android:id="@+id/create_account_guideline_begin"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                app:layout_constraintGuide_begin="30dp" />
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/create_account_guideline_end"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_end="30dp" />
 
-            <androidx.constraintlayout.widget.Guideline
-                android:id="@+id/create_account_guideline_end"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                app:layout_constraintGuide_end="30dp" />
+        <EditText
+            android:id="@+id/create_account_username"
+            android:layout_width="330dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/custom_edittext"
+            android:hint="Username"
+            android:inputType="text"
+            android:paddingStart="15dp"
+            android:paddingEnd="15dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/create_account_guideline_end"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="@id/create_account_guideline_begin"
+            app:layout_constraintTop_toTopOf="parent" />
 
-            <EditText
-                android:id="@+id/create_account_username"
-                android:layout_width="330dp"
-                android:layout_height="wrap_content"
-                android:background="@drawable/custom_edittext"
-                android:hint="Username"
-                android:inputType="text"
-                android:paddingStart="15dp"
-                android:paddingEnd="15dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="@id/create_account_guideline_end"
-                app:layout_constraintHorizontal_bias="0.5"
-                app:layout_constraintStart_toStartOf="@id/create_account_guideline_begin"
-                app:layout_constraintTop_toTopOf="parent" />
+        <EditText
+            android:id="@+id/create_account_password"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/custom_edittext"
+            android:hint="Password"
+            android:inputType="textPassword"
+            android:paddingStart="15dp"
+            android:paddingEnd="15dp"
+            app:layout_constraintEnd_toEndOf="@id/create_account_guideline_end"
+            app:layout_constraintStart_toStartOf="@id/create_account_guideline_begin"
+            app:layout_constraintTop_toBottomOf="@id/create_account_username" />
 
-            <EditText
-                android:id="@+id/create_account_password"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:background="@drawable/custom_edittext"
-                android:hint="Password"
-                android:inputType="textPassword"
-                android:paddingStart="15dp"
-                android:paddingEnd="15dp"
-                app:layout_constraintEnd_toEndOf="@id/create_account_guideline_end"
-                app:layout_constraintStart_toStartOf="@id/create_account_guideline_begin"
-                app:layout_constraintTop_toBottomOf="@id/create_account_username" />
+        <EditText
+            android:id="@+id/create_account_confirmPassword"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/custom_edittext"
+            android:hint="Confirm password"
+            android:inputType="textPassword"
+            android:paddingStart="15dp"
+            android:paddingEnd="15dp"
+            app:layout_constraintEnd_toEndOf="@id/create_account_guideline_end"
+            app:layout_constraintStart_toStartOf="@id/create_account_guideline_begin"
+            app:layout_constraintTop_toBottomOf="@id/create_account_password" />
 
-            <EditText
-                android:id="@+id/create_account_confirmPassword"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:background="@drawable/custom_edittext"
-                android:hint="Confirm password"
-                android:inputType="textPassword"
-                android:paddingStart="15dp"
-                android:paddingEnd="15dp"
-                app:layout_constraintEnd_toEndOf="@id/create_account_guideline_end"
-                app:layout_constraintStart_toStartOf="@id/create_account_guideline_begin"
-                app:layout_constraintTop_toBottomOf="@id/create_account_password" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Create New Account"
+            android:textColor="#E4504A4A"
+            android:textSize="25sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/create_account_guideline_end"
+            app:layout_constraintStart_toStartOf="@id/create_account_guideline_begin"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.25" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Create New Account"
-                android:textColor="#E4504A4A"
-                android:textSize="25sp"
-                android:textStyle="bold"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="@id/create_account_guideline_end"
-                app:layout_constraintStart_toStartOf="@id/create_account_guideline_begin"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.25" />
+        <Button
+            android:id="@+id/create_account_saveAccountCreationButton"
+            android:layout_width="160dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:backgroundTint="#FF8461"
+            android:text="Create"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/create_account_guideline_end"
+            app:layout_constraintTop_toBottomOf="@+id/create_account_confirmPassword"
+            app:layout_constraintVertical_bias="0" />
 
-            <Button
-                android:id="@+id/create_account_saveAccountCreationButton"
-                android:layout_width="160dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:backgroundTint="#FF8461"
-                android:text="Create"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="@id/create_account_guideline_end"
-                app:layout_constraintTop_toBottomOf="@+id/create_account_confirmPassword"
-                app:layout_constraintVertical_bias="0" />
-
-            <Button
-                android:id="@+id/create_account_cancelCreateAccountButton"
-                android:layout_width="160dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:backgroundTint="#AC9892"
-                android:text="Cancel"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="@id/create_account_guideline_begin"
-                app:layout_constraintTop_toBottomOf="@+id/create_account_confirmPassword"
-                app:layout_constraintVertical_bias="0" />
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
-    </androidx.core.widget.NestedScrollView>
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <Button
+            android:id="@+id/create_account_cancelCreateAccountButton"
+            android:layout_width="160dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:backgroundTint="#AC9892"
+            android:text="Cancel"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="@id/create_account_guideline_begin"
+            app:layout_constraintTop_toBottomOf="@+id/create_account_confirmPassword"
+            app:layout_constraintVertical_bias="0" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.core.widget.NestedScrollView>

@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.orangeloginscreen">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -9,6 +11,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+        <activity
+            android:name=".ui.activity.ListUsersActivity"
+            android:exported="true" />
         <activity
             android:name=".ui.activity.SplashScreenActivity"
             android:exported="true"
@@ -23,7 +28,7 @@
             android:name=".ui.activity.LoginActivity"
             android:exported="true" />
         <activity
-            android:name=".ui.activity.ListUsersActivity"
+            android:name=".ui.activity.ListMoviesActivity"
             android:exported="true" />
         <activity
             android:name=".ui.activity.EditUserDataActivity"

@@ -12,19 +12,33 @@ class UserDao {
         return users.toList()
     }
 
-    fun updateUser(position: Int, user: User) {
-        val userFound = users[position]
-        userFound.username = user.username
-        userFound.password = user.password
+    //Refatorar utilizando id do usuário
+    fun updateUser(user: User) {
+        findById(user.id)?.let {
+            val userFound = it
+
+            userFound.username = user.username
+            userFound.password = user.password
+        }
+
     }
 
     fun existsUser(username: String, password: String): Boolean{
         for(i in users.indices){
-            if(users[i].username.equals(username) && users[i].password.equals(password)){
+            if(users[i].username == username && users[i].password == password){
                 return true
             }
         }
         return false
+    }
+
+    fun findById(idRecieved : String): User? {
+        for(i in users.indices){
+            if(users[i].id.equals(idRecieved)){
+                return users[i]
+            }
+        }
+        return null
     }
 
     companion object {
