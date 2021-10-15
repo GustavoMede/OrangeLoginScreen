@@ -1,3 +1,23 @@
 <resources>
-    <string name="app_name">OrangeLoginScreen</string>
+    <string name="app_name">OrangeFilms</string>
+
+    <string name="navigation_drawer_open">
+        Open navigation drawer
+    </string>
+
+    <string name="navigation_drawer_close">
+        Close navigation drawer
+    </string>
+
+    <string name="header_hello">Olá, %s!</string>
+
+    <string name="progress_validating">Validating…</string>
+
+    <string name="progress_loading">Loading…</string>
+
+    <string name="progress_saving_changes">Saving changes…</string>
+
+    <string name="progress_loading_movies_list">Loading movies list…</string>
+
+    <string name="progress_loading_users_list">Loading users list…</string>
 </resources>
