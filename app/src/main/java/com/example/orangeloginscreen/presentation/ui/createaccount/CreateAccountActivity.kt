@@ -66,14 +66,9 @@ class CreateAccountActivity : AppCompatActivity() {
                 }
                 is CreateAccountState.onLoading -> onLoading()
                 is CreateAccountState.onError -> showError(it.message)
-                is CreateAccountState.onValidating -> onValidating()
                 is CreateAccountState.onSuccess -> onSuccess(it.message)
             }
         }
-    }
-
-    private fun onValidating() {
-        loadingDialog.startLoadingDialog(getString(R.string.progress_validating))
     }
 
     private fun showError(message: String) {

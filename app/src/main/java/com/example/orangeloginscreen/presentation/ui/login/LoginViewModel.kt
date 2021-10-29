@@ -5,7 +5,6 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.orangeloginscreen.domain.usecase.existsuser.OnLoginUseCase
-import com.example.orangeloginscreen.domain.usecase.existsuser.OnLoginUseCaseImpl
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 

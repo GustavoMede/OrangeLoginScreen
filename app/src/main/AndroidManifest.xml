@@ -1,19 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.example.orangeloginscreen">
 
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
+        android:name=".AppInitialization"
         android:allowBackup="true"
-        android:label="@string/app_name"
         android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher"
         android:supportsRtl="true"
-        android:theme="@style/Theme.AppCompat.Light.NoActionBar"
-        android:name=".AppInitialization">
+        android:theme="@style/Theme.AppCompat.Light.NoActionBar">
         <activity
-            android:name="com.example.orangeloginscreen.presentation.ui.splashscreen.SplashScreenActivity"
+            android:name=".presentation.ui.splashscreen.SplashScreenActivity"
             android:exported="true"
             android:theme="@style/SplashTheme">
             <intent-filter>
@@ -23,21 +24,24 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.example.orangeloginscreen.presentation.ui.moviedetails.MovieDetailsActivity"
-            android:parentActivityName="com.example.orangeloginscreen.presentation.ui.listmovies.ListMoviesActivity" />
+            android:name=".presentation.ui.favouritemovieslist.ListFavouriteMoviesActivity"
+            android:exported="true"
+            android:parentActivityName=".presentation.ui.listmovies.ListMoviesActivity"/>
         <activity
-            android:name="com.example.orangeloginscreen.presentation.ui.listusers.ListUsersActivity"
-            android:parentActivityName="com.example.orangeloginscreen.presentation.ui.login.LoginActivity"/>
+            android:name=".presentation.ui.moviedetails.MovieDetailsActivity"
+            android:parentActivityName=".presentation.ui.listmovies.ListMoviesActivity" />
         <activity
-            android:name="com.example.orangeloginscreen.presentation.ui.login.LoginActivity" />
+            android:name=".presentation.ui.listusers.ListUsersActivity"
+            android:parentActivityName=".presentation.ui.login.LoginActivity" />
+        <activity android:name=".presentation.ui.login.LoginActivity" />
+        <activity android:name=".presentation.ui.listmovies.ListMoviesActivity"
+            android:launchMode="singleTop"/>
         <activity
-            android:name="com.example.orangeloginscreen.presentation.ui.listmovies.ListMoviesActivity" />
+            android:name=".presentation.ui.edituser.EditUserDataActivity"
+            android:parentActivityName=".presentation.ui.listusers.ListUsersActivity" />
         <activity
-            android:name="com.example.orangeloginscreen.presentation.ui.edituser.EditUserDataActivity"
-            android:parentActivityName="com.example.orangeloginscreen.presentation.ui.listusers.ListUsersActivity"/>
-        <activity
-            android:name="com.example.orangeloginscreen.presentation.ui.createaccount.CreateAccountActivity"
-            android:parentActivityName="com.example.orangeloginscreen.presentation.ui.login.LoginActivity"/>
+            android:name=".presentation.ui.createaccount.CreateAccountActivity"
+            android:parentActivityName=".presentation.ui.login.LoginActivity" />
     </application>
 
 </manifest>

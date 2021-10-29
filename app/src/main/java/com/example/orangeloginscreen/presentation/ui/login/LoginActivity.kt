@@ -90,13 +90,8 @@ class LoginActivity : AppCompatActivity() {
                 is LoginState.onError -> showError(it.message)
                 is LoginState.onLoading -> onLoading()
                 is LoginState.onSuccess -> onSuccess(it.user)
-                is LoginState.onValidating -> onValidating()
             }
         }
-    }
-
-    private fun onValidating() {
-        loadingDialog.startLoadingDialog(getString(R.string.progress_validating))
     }
 
     private fun onSuccess(user: User) {

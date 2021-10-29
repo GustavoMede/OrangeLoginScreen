@@ -16,13 +16,14 @@ import com.example.orangeloginscreen.RecyclerView.adapter.MovieListener
 import com.example.orangeloginscreen.databinding.ActivityListMoviesBinding
 import com.example.orangeloginscreen.domain.model.Movie
 import com.example.orangeloginscreen.domain.model.User
+import com.example.orangeloginscreen.presentation.ui.favouritemovieslist.ListFavouriteMoviesActivity
 import com.example.orangeloginscreen.presentation.ui.loadingdialog.LoadingDialog
 import com.example.orangeloginscreen.presentation.ui.login.LoginActivity
 import com.example.orangeloginscreen.presentation.ui.moviedetails.MovieDetailsActivity
 import com.google.android.material.navigation.NavigationView
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
-class ListMoviesActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener{
+class ListMoviesActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
 
     private val binding by lazy {
         ActivityListMoviesBinding.inflate(layoutInflater)
@@ -63,10 +64,16 @@ class ListMoviesActivity : AppCompatActivity(), NavigationView.OnNavigationItemS
         )
     }
 
-    private fun configureToolbar(){
+    private fun configureToolbar() {
         setSupportActionBar(binding.listMoviesToolbar)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
-        val toggle = ActionBarDrawerToggle(this, drawer, binding.listMoviesToolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close)
+        val toggle = ActionBarDrawerToggle(
+            this,
+            drawer,
+            binding.listMoviesToolbar,
+            R.string.navigation_drawer_open,
+            R.string.navigation_drawer_close
+        )
         drawer.addDrawerListener(toggle)
         toggle.syncState()
         binding.listMoviesNavView.setNavigationItemSelectedListener(this)
@@ -74,17 +81,25 @@ class ListMoviesActivity : AppCompatActivity(), NavigationView.OnNavigationItemS
 
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
 
-        when(item.itemId){
+        when (item.itemId) {
             R.id.nav_signout -> {
                 startActivity(Intent(this@ListMoviesActivity, LoginActivity::class.java))
                 finish()
+            }
+            R.id.nav_favourite_movies -> {
+                startActivity(
+                    Intent(
+                        this@ListMoviesActivity,
+                        ListFavouriteMoviesActivity::class.java
+                    )
+                )
             }
         }
         return true
     }
 
     override fun onBackPressed() {
-        if(drawer.isDrawerOpen(GravityCompat.START)){
+        if (drawer.isDrawerOpen(GravityCompat.START)) {
             drawer.closeDrawer(GravityCompat.START)
             return
         }
@@ -92,34 +107,36 @@ class ListMoviesActivity : AppCompatActivity(), NavigationView.OnNavigationItemS
         super.onBackPressed()
     }
 
-    private fun configureMenuInformations(){
+    private fun configureMenuInformations() {
         user?.let {
-            val menuUserUsername = binding.listMoviesNavView.getHeaderView(0).findViewById<TextView>(R.id.nav_header_username)
+            val menuUserUsername = binding.listMoviesNavView.getHeaderView(0)
+                .findViewById<TextView>(R.id.nav_header_username)
             menuUserUsername.text = getString(R.string.header_hello, it.username)
-            val menuUserAvatar = binding.listMoviesNavView.getHeaderView(0).findViewById<ImageView>(R.id.nav_header_user_avatar)
+            val menuUserAvatar = binding.listMoviesNavView.getHeaderView(0)
+                .findViewById<ImageView>(R.id.nav_header_user_avatar)
             Glide.with(menuUserAvatar).load(it.avatar).into(menuUserAvatar)
         }
     }
 
-    private fun listMovies(){
+    private fun listMovies() {
         listMoviesViewModel.listAllMovies()
     }
 
-    private fun onObserverState(){
+    private fun onObserverState() {
         listMoviesViewModel.viewState.observe(this) {
-            when(it){
-                is ListMoviesState.IDLE -> {}
+            when (it) {
+                is ListMoviesState.IDLE -> {
+                }
                 is ListMoviesState.onError -> showError(it.message)
                 is ListMoviesState.onListLoaded -> onListLoaded(it.movies)
                 is ListMoviesState.onLoading -> onLoading()
-                else -> {}
+                else -> {
+                }
             }
-
-
         }
     }
 
-    private fun onListLoaded(movies: List<Movie>){
+    private fun onListLoaded(movies: List<Movie>) {
         loadingDialog.finalizeLoadingDialog()
         configureAdapter(movies)
     }
@@ -128,7 +145,7 @@ class ListMoviesActivity : AppCompatActivity(), NavigationView.OnNavigationItemS
         Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
     }
 
-    private fun onLoading(){
+    private fun onLoading() {
         loadingDialog.startLoadingDialog(getString(R.string.progress_loading_movies_list))
     }
 }

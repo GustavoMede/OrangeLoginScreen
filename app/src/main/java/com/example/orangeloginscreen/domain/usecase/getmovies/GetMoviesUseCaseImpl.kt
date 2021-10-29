@@ -4,10 +4,10 @@ import com.example.orangeloginscreen.data.MovieRepository
 import com.example.orangeloginscreen.domain.model.Movie
 
 class GetMoviesUseCaseImpl(
-    val repository: MovieRepository
-): GetMoviesUseCase {
+    private val repository: MovieRepository
+) : GetMoviesUseCase {
 
-    override suspend fun getMovies() : List<Movie>{
-        return repository.listAllMovies()
+    override suspend fun getMovies(): List<Movie> {
+        return repository.getMovies()
     }
 }

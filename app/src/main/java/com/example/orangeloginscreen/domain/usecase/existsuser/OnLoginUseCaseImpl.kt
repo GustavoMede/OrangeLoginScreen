@@ -4,7 +4,7 @@ import com.example.orangeloginscreen.data.UserRepository
 import com.example.orangeloginscreen.domain.model.User
 
 class OnLoginUseCaseImpl(
-    val repository: UserRepository
+    private val repository: UserRepository
 ): OnLoginUseCase {
 
     override suspend fun onLogin(username: String, password: String): User {

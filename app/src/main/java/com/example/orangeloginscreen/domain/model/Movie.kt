@@ -6,10 +6,11 @@ import java.util.*
 
 @Parcelize
 data class Movie(
-    val id: String = UUID.randomUUID().toString(),
+    val id: String,
     val urlImage: String,
     val urlBanner: String,
     val name: String,
     val rate: String,
-    val synopsis: String
+    val synopsis: String,
+    var isFavourite: Boolean = false
 ) : Parcelable

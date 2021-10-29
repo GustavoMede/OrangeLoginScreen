@@ -9,32 +9,28 @@
         <entry key="app/src/main/res/drawable/custom_button.xml" value="0.41333333333333333" />
         <entry key="app/src/main/res/drawable/custom_edittext.xml" value="0.41333333333333333" />
         <entry key="app/src/main/res/drawable/gradient_background.xml" value="0.41333333333333333" />
-        <entry key="app/src/main/res/drawable/ic_bladerunner_background.xml" value="0.2995614035087719" />
         <entry key="app/src/main/res/drawable/ic_launcher_background.xml" value="0.41333333333333333" />
         <entry key="app/src/main/res/drawable/ic_login_background.xml" value="0.41333333333333333" />
         <entry key="app/src/main/res/drawable/ic_round_favorite_24.xml" value="0.2995614035087719" />
         <entry key="app/src/main/res/drawable/splash_background.xml" value="0.29912280701754385" />
         <entry key="app/src/main/res/drawable/textinputborder.xml" value="0.41333333333333333" />
-        <entry key="app/src/main/res/drawable/transparent_progress_bar.xml" value="0.19035087719298247" />
-        <entry key="app/src/main/res/layout-v23/custom_loading_dialog.xml" value="0.20989583333333334" />
         <entry key="app/src/main/res/layout/activity_create_account.xml" value="0.18885869565217392" />
         <entry key="app/src/main/res/layout/activity_edit_user_data.xml" value="0.18885869565217392" />
+        <entry key="app/src/main/res/layout/activity_list_favourite_movies.xml" value="0.18885869565217392" />
         <entry key="app/src/main/res/layout/activity_list_movies.xml" value="0.28596491228070176" />
         <entry key="app/src/main/res/layout/activity_list_users.xml" value="0.28596491228070176" />
         <entry key="app/src/main/res/layout/activity_lista_usuarios.xml" value="0.19630192502532928" />
         <entry key="app/src/main/res/layout/activity_login_form.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.3654891304347826" />
-        <entry key="app/src/main/res/layout/activity_movie_details.xml" value="0.28596491228070176" />
+        <entry key="app/src/main/res/layout/activity_movie_details.xml" value="0.18885869565217392" />
         <entry key="app/src/main/res/layout/activity_movie_item.xml" value="0.28596491228070176" />
         <entry key="app/src/main/res/layout/activity_user_item.xml" value="0.28596491228070176" />
-        <entry key="app/src/main/res/layout/custom_loading_dialog.xml" value="0.28596491228070176" />
+        <entry key="app/src/main/res/layout/custom_loading_dialog.xml" value="0.18885869565217392" />
         <entry key="app/src/main/res/layout/login_usuario.xml" value="0.3654891304347826" />
-        <entry key="app/src/main/res/layout/nav_header.xml" value="0.28596491228070176" />
+        <entry key="app/src/main/res/layout/nav_header.xml" value="0.18885869565217392" />
         <entry key="app/src/main/res/menu/drawer_menu.xml" value="0.28596491228070176" />
         <entry key="app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.2995614035087719" />
-        <entry key="app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.2995614035087719" />
         <entry key="app/src/main/res/mipmap-anydpi-v26/ic_login.xml" value="0.41333333333333333" />
-        <entry key="app/src/main/res/mipmap-xxhdpi/ic_launcher.xml" value="0.19035087719298247" />
       </map>
     </option>
   </component>

@@ -9,8 +9,4 @@ sealed class CreateAccountState {
     data class onError(val message: String): CreateAccountState()
 
     object onLoading: CreateAccountState()
-
-    object onValidating: CreateAccountState()
-
-    object onValidated: CreateAccountState()
 }

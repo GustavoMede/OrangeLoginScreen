@@ -1,10 +1,10 @@
 package com.example.orangeloginscreen.data
 
+import com.example.orangeloginscreen.data.source.localdatasource.UserLocalDataSource
 import com.example.orangeloginscreen.domain.model.User
-import com.example.orangeloginscreen.data.source.UserLocalDataSourceImpl
 
 class UserRepository(
-    private val dao: UserLocalDataSourceImpl
+    private val dao: UserLocalDataSource
 ) {
 
     suspend fun onCreateAccount(

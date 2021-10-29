@@ -11,8 +11,4 @@ sealed class LoginState {
     data class onError(val message: String): LoginState()
 
     object onLoading: LoginState()
-
-    object onValidating: LoginState()
-
-    object onValidated: LoginState()
 }
