@@ -27,6 +27,18 @@
             android:orientation="vertical"
             app:layout_constraintGuide_end="30dp" />
 
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/create_account_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@android:color/transparent"
+            android:elevation="4dp"
+            android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
         <EditText
             android:id="@+id/create_account_username"
             android:layout_width="330dp"
