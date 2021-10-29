@@ -78,7 +78,7 @@
                     android:textStyle="bold"
                     tools:text="Nota" />
             </FrameLayout>
-            
+
             <TextView
                 android:id="@+id/movie_details_synopsis"
                 android:layout_width="match_parent"
